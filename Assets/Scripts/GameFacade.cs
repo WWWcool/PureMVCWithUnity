@@ -42,6 +42,8 @@ namespace Game
             RegisterCommand(GameEvent.NEW_LIFE, () => { /*Debug.Log("[GameFacade][NewLifeCommand]");*/ return new NewLifeCommand(); });
             RegisterCommand(GameEvent.RUN_BALL, () => { /*Debug.Log("[GameFacade][RunBallCommand]");*/ return new RunBallCommand(); });
             RegisterCommand(GameEvent.MOVE_RACKET, () => { /*Debug.Log("[GameFacade][MoveRacketCommand]");*/ return new MoveRacketCommand(); });
+            RegisterCommand(GameEvent.LOAD_LEVEL, () => { /*Debug.Log("[GameFacade][LoadLevelCommand]");*/ return new LoadLevelCommand(); });
+            RegisterCommand(GameEvent.LEVEL_COMPLETE, () => { /*Debug.Log("[GameFacade][LevelCompleteCommand]");*/ return new LevelCompleteCommand(); });
         }
 
         protected override void InitializeModel()

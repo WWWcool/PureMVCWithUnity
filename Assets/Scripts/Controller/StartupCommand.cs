@@ -1,7 +1,6 @@
 ﻿using System;
 using PureMVC.Interfaces;
 using PureMVC.Patterns.Command;
-using UnityEngine;
 
 namespace Game
 {
@@ -14,7 +13,7 @@ namespace Game
                 throw new Exception("[StartupCommand][Execute] Wrong notification body");
 
             GameData gameData = new GameData() {
-                lifes = 1,
+                lifes = game.lifes,
                 currentLevel = 0,
                 score = 0,
                 levels = game.levels,
@@ -31,6 +30,9 @@ namespace Game
             Facade.RegisterMediator(new BottomMediator(game.bottomView));
             Facade.RegisterMediator(new HighScorePopupMediator(game.highScorePopupView));
             Facade.RegisterMediator(new LeaderBoardMediator(game.leaderBoardView));
+            Facade.RegisterMediator(new LevelMediator(game.levelView));
+
+            SendNotification(GameEvent.LOAD_LEVEL);
         }
     }
 }

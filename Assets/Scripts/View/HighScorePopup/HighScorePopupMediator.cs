@@ -45,9 +45,13 @@ namespace Game
             {
                 case GameEvent.GAME_OVER:
                     var score = gameProxy.GetData().score;
-                    if(leaderBoardProxy.IsScoreHigh(score))
+                    if(leaderBoardProxy.IsScoreHigh(score) && score > 0)
                     {
                         highScorePopupView.Show(score);
+                    }
+                    else
+                    {
+                        SendNotification(GameEvent.LD_SHOW);
                     }
                     break;
             }
@@ -55,6 +59,7 @@ namespace Game
 
         public void OnClick(string name)
         {
+            name = name.Equals("") ? "Player" : name;
             leaderBoardProxy.AddNewScore(name, gameProxy.GetData().score);
             SendNotification(GameEvent.LD_SHOW);
         }

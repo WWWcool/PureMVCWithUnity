@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -10,8 +11,10 @@ namespace Game
         public BottomView bottomView;
         public LeaderBoardView leaderBoardView;
         public HighScorePopupView highScorePopupView;
+        public LevelView levelView;
         public Transform ball;
         public Transform racket;
+        public int lifes = 2;
         private void Start()
         {
             (GameFacade.Instance as GameFacade).StartUp(this);

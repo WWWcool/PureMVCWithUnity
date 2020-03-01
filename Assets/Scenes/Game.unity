@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316784826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3831652, y: -1.0860375, z: -6.632952}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -374,14 +374,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90441740aeacc74a9e3bdfecd1ef9a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: a31fb84143a14d44c94fa920fcbe173c, type: 2}
+  - {fileID: 11400000, guid: 986e894f4556de741b09152065215411, type: 2}
+  - {fileID: 11400000, guid: 5dbb08a93fe72924883e4584bc026b6a, type: 2}
   impulseInputView: {fileID: 876041230}
   gameUIView: {fileID: 188119786}
   bottomView: {fileID: 686447672}
   leaderBoardView: {fileID: 500501186}
   highScorePopupView: {fileID: 374849674}
+  levelView: {fileID: 613119955}
   ball: {fileID: 1910547751}
   racket: {fileID: 331640719}
+  lifes: 2
 --- !u!1 &320783906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 613119954}
+  - component: {fileID: 613119955}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1098,6 +1104,20 @@ Transform:
   m_Father: {fileID: 714648085}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613119955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613119953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e5360762580544ab4352d278239429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blockPrefab: {fileID: 3063615256192685703, guid: 5f6d70d692f905e45b28dc7be7c44326,
+    type: 3}
 --- !u!1 &617406511
 GameObject:
   m_ObjectHideFlags: 0
